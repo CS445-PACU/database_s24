@@ -11,6 +11,12 @@
             "port": 9003
         },
         {
+            "name": "Listen for Xdebug - CLI",
+            "type": "php",
+            "request": "launch",
+            "port": 9000
+        },
+        {
             "name": "Launch currently open script",
             "type": "php",
             "request": "launch",
