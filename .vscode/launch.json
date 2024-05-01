@@ -32,7 +32,49 @@
             }
         },
         {
-            "name": "Launch built-in server and debug!",
+            "name": "Launch built-in server and debug! - html",
+            "type": "php",
+            "request": "launch",
+            "runtimeArgs": [
+                "-dxdebug.mode=debug",
+                "-dxdebug.start_with_request=yes",
+                "-S",
+                "localhost:8000", // 8000
+                "-t",
+                "${workspaceFolder}/html"
+            ],
+            "port": 0, // 9003
+            "serverReadyAction": {
+                "action": "openExternally"
+            },
+            "env": {
+                "XDEBUG_MODE": "debug,develop",
+                "XDEBUG_CONFIG": "client_port=${port}"
+            }
+        },
+        {
+            "name": "Launch Built-in web server - html",
+            "type": "php",
+            "request": "launch",
+            "runtimeArgs": [
+                "-dxdebug.mode=debug",
+                "-dxdebug.start_with_request=yes",
+                "-S",
+                "localhost:0",
+                "-t",
+                "${workspaceFolder}/html"
+            ],
+            "program": "",
+            "cwd": "${workspaceRoot}",
+            "port": 0,
+            "serverReadyAction": {
+                "pattern": "Development Server \\(http://localhost:([0-9]+)\\) started",
+                "uriFormat": "http://localhost:%s",
+                "action": "openExternally"
+            }
+        },
+        {
+            "name": "Launch built-in server and debug! - examples",
             "type": "php",
             "request": "launch",
             "runtimeArgs": [
@@ -53,7 +95,7 @@
             }
         },
         {
-            "name": "Launch Built-in web server",
+            "name": "Launch Built-in web server - examples",
             "type": "php",
             "request": "launch",
             "runtimeArgs": [
